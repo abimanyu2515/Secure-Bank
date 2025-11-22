@@ -62,21 +62,22 @@ export default function VerifyIdentityPage({ onNavigate, onVerified }) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 flex items-center justify-center p-8">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
       
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute top-20 left-10 w-64 h-64 sm:w-96 sm:h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute top-40 right-10 w-64 h-64 sm:w-96 sm:h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute -bottom-20 left-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
       </div>
 
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center gap-12 relative z-10">
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12 relative z-10">
         <button
           onClick={() => onNavigate('login')}
-          className="absolute top-0 left-0 flex items-center gap-2 text-teal-700 font-semibold hover:text-teal-800"
+          className="absolute top-0 left-0 flex items-center gap-2 text-teal-700 font-semibold hover:text-teal-800 text-sm sm:text-base"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Login
+          <span className="hidden sm:inline">Back to Login</span>
+          <span className="sm:hidden">Back</span>
         </button>
         
         <div className="flex-1 text-center lg:text-left space-y-10">

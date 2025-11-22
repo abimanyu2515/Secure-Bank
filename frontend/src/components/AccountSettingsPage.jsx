@@ -45,29 +45,29 @@ export default function AccountSettingsPage({ onNavigate, onLogout }) {
     <div className="flex min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50">
       <Sidebar active="settings" onNavigate={onNavigate} onLogout={onLogout} />
 
-      <div className="flex-1 overflow-y-auto">
-        <div className="p-8 space-y-8">
-          <header className="flex items-center justify-between bg-white rounded-2xl p-6 border-2 border-teal-100 shadow-lg">
-            <div className="flex items-center gap-4">
+      <div className="flex-1 overflow-y-auto lg:ml-0">
+        <div className="p-4 sm:p-6 lg:p-8 pt-16 lg:pt-8 space-y-6 sm:space-y-8">
+          <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-teal-100 shadow-lg">
+            <div className="flex items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate("home")}
-                className="w-12 h-12 rounded-2xl bg-teal-50 hover:bg-teal-100 flex items-center justify-center text-teal-600 transition"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-teal-50 hover:bg-teal-100 flex items-center justify-center text-teal-600 transition"
               >
-                <ArrowLeft />
+                <ArrowLeft className="w-5 h-5" />
               </button>
               <div>
-                <p className="text-sm font-semibold text-teal-600 flex items-center gap-2">
-                  Secure Profile Settings <Lock className="w-4 h-4" />
+                <p className="text-xs sm:text-sm font-semibold text-teal-600 flex items-center gap-2">
+                  Secure Profile Settings <Lock className="w-3 h-3 sm:w-4 sm:h-4" />
                 </p>
-                <h1 className="text-2xl font-bold text-gray-800">Account Settings</h1>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Account Settings</h1>
               </div>
             </div>
-            <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold shadow">
+            <button className="px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-xs sm:text-sm font-semibold shadow w-full sm:w-auto">
               Save Changes
             </button>
           </header>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
             <section className="bg-white rounded-2xl border-2 border-teal-100 p-6 shadow space-y-4">
               <h2 className="text-xl font-bold text-gray-800 mb-2">Profile Information</h2>
               {[

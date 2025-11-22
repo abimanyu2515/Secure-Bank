@@ -41,50 +41,44 @@ export default function HomePage({ onNavigate, onLogout }) {
   };
 
   return (
-    <div className="flex h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50">
+    <div className="flex min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50">
       <Sidebar active="home" onNavigate={onNavigate} onLogout={onLogout} />
 
       {/* Main Content */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="p-8">
+      <div className="flex-1 overflow-y-auto lg:ml-0">
+        <div className="p-4 sm:p-6 lg:p-8 pt-16 lg:pt-8">
           {/* Header */}
-          <div className="flex flex-col gap-6 mb-8">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => onNavigate("transfer")}
-                  className="w-12 h-12 rounded-2xl bg-teal-50 hover:bg-teal-100 flex items-center justify-center text-teal-600 transition"
-                >
-                  <ArrowLeft />
-                </button>
+          <div className="flex flex-col gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <div>
-                  <p className="text-sm text-teal-600 font-semibold">Welcome back, Heramb Pawar</p>
-                  <h1 className="text-3xl font-bold text-gray-800">Smart Dashboard</h1>
+                  <p className="text-xs sm:text-sm text-teal-600 font-semibold">Welcome back, Heramb Pawar</p>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">Smart Dashboard</h1>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
                 <button
                   onClick={handleVoiceClick}
-                  className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                  className="w-10 h-10 sm:w-12 sm:h-14 sm:h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-105"
                 >
-                  <Mic className="w-6 h-6 text-white" />
+                  <Mic className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </button>
 
-                <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
-                  <Lock className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-14 sm:h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
+                  <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
 
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_of_India_Logo.svg/2560px-Bank_of_India_Logo.svg.png"
                   alt="Bank of India"
-                  className="h-12"
+                  className="h-8 sm:h-10 lg:h-12"
                 />
               </div>
             </div>
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               Track balances, analyze spending, and launch quick actions across your Bank of India accounts.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
               {[
                 { label: "Transfer Money", action: "transfer" },
                 { label: "Manage Cards", action: "cards" },
@@ -94,7 +88,7 @@ export default function HomePage({ onNavigate, onLogout }) {
                 <button
                   key={item.action}
                   onClick={() => onNavigate(item.action)}
-                  className="bg-white border-2 border-teal-100 rounded-2xl py-4 px-2 text-sm font-semibold text-gray-700 shadow hover:shadow-md transition"
+                  className="bg-white border-2 border-teal-100 rounded-xl sm:rounded-2xl py-3 sm:py-4 px-2 sm:px-3 text-xs sm:text-sm font-semibold text-gray-700 shadow hover:shadow-md transition"
                 >
                   {item.label}
                 </button>
@@ -103,53 +97,53 @@ export default function HomePage({ onNavigate, onLogout }) {
           </div>
 
           {/* Balance Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
             {/* Total Balance */}
-            <div className="bg-gradient-to-br from-teal-400 via-teal-500 to-cyan-500 rounded-2xl p-8 text-white shadow-xl">
-              <h3 className="text-lg mb-3 font-medium opacity-90">Total Balance</h3>
-              <p className="text-5xl font-bold mb-2">₹75,420</p>
-              <p className="text-sm opacity-80">+5.2% from last month</p>
+            <div className="bg-gradient-to-br from-teal-400 via-teal-500 to-cyan-500 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white shadow-xl">
+              <h3 className="text-base sm:text-lg mb-2 sm:mb-3 font-medium opacity-90">Total Balance</h3>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">₹75,420</p>
+              <p className="text-xs sm:text-sm opacity-80">+5.2% from last month</p>
             </div>
 
             {/* Smaller cards */}
-            <div className="grid grid-cols-1 gap-4">
-              <div className="bg-white rounded-2xl p-5 shadow-lg border-2 border-teal-100">
-                <p className="text-sm mb-2 text-gray-600 font-semibold">Savings Account</p>
-                <p className="text-3xl font-bold text-gray-800">₹50,000</p>
+            <div className="grid grid-cols-1 gap-3 sm:gap-4">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-lg border-2 border-teal-100">
+                <p className="text-xs sm:text-sm mb-2 text-gray-600 font-semibold">Savings Account</p>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-800">₹50,000</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl p-5 text-white shadow-lg">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl sm:rounded-2xl p-4 sm:p-5 text-white shadow-lg">
                   <p className="text-xs mb-2 opacity-90">Income</p>
-                  <p className="text-2xl font-bold">₹55,000</p>
+                  <p className="text-xl sm:text-2xl font-bold">₹55,000</p>
                 </div>
-                <div className="bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl p-5 text-white shadow-lg">
+                <div className="bg-gradient-to-br from-red-400 to-pink-500 rounded-xl sm:rounded-2xl p-4 sm:p-5 text-white shadow-lg">
                   <p className="text-xs mb-2 opacity-90">Expenditure</p>
-                  <p className="text-2xl font-bold">₹29,580</p>
+                  <p className="text-xl sm:text-2xl font-bold">₹29,580</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Bar Chart */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-teal-100 mb-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Income vs Expenditure</h3>
-            <div className="flex items-center gap-6 mb-6">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border-2 border-teal-100 mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Income vs Expenditure</h3>
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-teal-500 rounded"></div>
-                <span className="text-gray-700 font-medium">Income</span>
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-teal-500 rounded"></div>
+                <span className="text-sm sm:text-base text-gray-700 font-medium">Income</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-teal-200 rounded"></div>
-                <span className="text-gray-700 font-medium">Expenditure</span>
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-teal-200 rounded"></div>
+                <span className="text-sm sm:text-base text-gray-700 font-medium">Expenditure</span>
               </div>
             </div>
 
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={250}>
               <BarChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
-                <XAxis dataKey="month" stroke="#666" />
-                <YAxis stroke="#666" />
+                <XAxis dataKey="month" stroke="#666" fontSize={12} />
+                <YAxis stroke="#666" fontSize={12} />
                 <Bar dataKey="Income" fill="#14b8a6" radius={[8, 8, 0, 0]} />
                 <Bar dataKey="Expenditure" fill="#99f6e4" radius={[8, 8, 0, 0]} />
               </BarChart>
@@ -157,21 +151,21 @@ export default function HomePage({ onNavigate, onLogout }) {
           </div>
 
           {/* Transactions */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-teal-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Recent Transactions</h3>
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border-2 border-teal-100">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Recent Transactions</h3>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {transactions.map((t) => (
                 <div
                   key={t.id}
-                  className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg sm:rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div>
-                    <p className="font-semibold text-gray-800">{t.name}</p>
-                    <p className="text-sm text-gray-500">{t.date}</p>
+                  <div className="flex-1">
+                    <p className="font-semibold text-sm sm:text-base text-gray-800">{t.name}</p>
+                    <p className="text-xs sm:text-sm text-gray-500">{t.date}</p>
                   </div>
                   <p
-                    className={`text-xl font-bold ${
+                    className={`text-lg sm:text-xl font-bold ${
                       t.type === "credit" ? "text-green-600" : "text-red-600"
                     }`}
                   >
@@ -182,7 +176,7 @@ export default function HomePage({ onNavigate, onLogout }) {
 
               <button
                 onClick={() => onNavigate("statements")}
-                className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold py-3 rounded-xl hover:from-teal-600 hover:to-cyan-600 transition shadow-md"
+                className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold py-3 rounded-xl hover:from-teal-600 hover:to-cyan-600 transition shadow-md text-sm sm:text-base"
               >
                 View All Transactions
               </button>
@@ -194,12 +188,12 @@ export default function HomePage({ onNavigate, onLogout }) {
       {/* Voice Assistant Modal */}
       {showVoiceAssistant && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative border-4 border-teal-500">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 relative border-2 sm:border-4 border-teal-500">
             <button
               onClick={() => setShowVoiceAssistant(false)}
-              className="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition"
             >
-              <X className="w-5 h-5 text-gray-600" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
             </button>
 
             <div className="text-center">

@@ -80,21 +80,21 @@ export default function TransferMoneyPage({ onNavigate, onLogout }) {
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50">
       <Sidebar active="transfer" onNavigate={onNavigate} onLogout={onLogout} />
-      <div className="flex-1 overflow-y-auto">
-        <div className="p-8 space-y-8">
-          <header className="flex items-center justify-between bg-white rounded-2xl p-6 border-2 border-teal-100 shadow-lg">
-            <div className="flex items-center gap-4">
+      <div className="flex-1 overflow-y-auto lg:ml-0">
+        <div className="p-4 sm:p-6 lg:p-8 pt-16 lg:pt-8 space-y-6 sm:space-y-8">
+          <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-teal-100 shadow-lg">
+            <div className="flex items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate("home")}
-                className="w-12 h-12 rounded-2xl bg-teal-50 hover:bg-teal-100 flex items-center justify-center text-teal-600 transition"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-teal-50 hover:bg-teal-100 flex items-center justify-center text-teal-600 transition"
               >
-                <ArrowLeft />
+                <ArrowLeft className="w-5 h-5" />
               </button>
               <div>
-                <p className="text-sm font-semibold text-teal-600 flex items-center gap-2">
-                  Secure Transfer <Lock className="w-4 h-4" />
+                <p className="text-xs sm:text-sm font-semibold text-teal-600 flex items-center gap-2">
+                  Secure Transfer <Lock className="w-3 h-3 sm:w-4 sm:h-4" />
                 </p>
-                <h1 className="text-2xl font-bold text-gray-800">
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-800">
                   Transfer Money
                 </h1>
               </div>
@@ -102,20 +102,20 @@ export default function TransferMoneyPage({ onNavigate, onLogout }) {
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_of_India_Logo.svg/2560px-Bank_of_India_Logo.svg.png"
               alt="Bank of India"
-              className="h-12"
+              className="h-8 sm:h-10 lg:h-12"
             />
           </header>
 
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-            <section className="xl:col-span-2 bg-white rounded-2xl border-2 border-teal-100 p-6 shadow-lg">
-              <div className="flex items-center justify-between mb-6">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
+            <section className="xl:col-span-2 bg-white rounded-xl sm:rounded-2xl border-2 border-teal-100 p-4 sm:p-6 shadow-lg">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
                 <div>
-                  <p className="text-sm text-gray-500">Quick NEFT/IMPS/UPI</p>
-                  <h2 className="text-2xl font-semibold text-gray-800">
+                  <p className="text-xs sm:text-sm text-gray-500">Quick NEFT/IMPS/UPI</p>
+                  <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">
                     Transfer Details
                   </h2>
                 </div>
-                <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-semibold">
+                <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs sm:text-sm font-semibold">
                   Instant
                 </span>
               </div>
@@ -262,15 +262,15 @@ export default function TransferMoneyPage({ onNavigate, onLogout }) {
               </form>
             </section>
 
-            <section className="space-y-6">
-              <div className="bg-white rounded-2xl border-2 border-teal-100 p-6 shadow-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <ShieldCheck className="w-6 h-6 text-emerald-600" />
+            <section className="space-y-4 sm:space-y-6">
+              <div className="bg-white rounded-xl sm:rounded-2xl border-2 border-teal-100 p-4 sm:p-6 shadow-lg">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   <div>
-                    <p className="text-sm font-semibold text-emerald-600">
+                    <p className="text-xs sm:text-sm font-semibold text-emerald-600">
                       Bank of India Secure
                     </p>
-                    <h3 className="text-xl font-bold text-gray-800">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800">
                       Quick Beneficiaries
                     </h3>
                   </div>
@@ -316,14 +316,14 @@ export default function TransferMoneyPage({ onNavigate, onLogout }) {
 
       {showConfirmation && (
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-3xl p-8 max-w-md w-full border-2 border-emerald-200 shadow-2xl text-center">
-            <div className="w-20 h-20 mx-auto bg-emerald-50 rounded-full flex items-center justify-center mb-4">
-              <CheckCircle2 className="w-12 h-12 text-emerald-500" />
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-md w-full border-2 border-emerald-200 shadow-2xl text-center">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-emerald-50 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+              <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-emerald-500" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
               Transfer Scheduled
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
               Your transfer of {formData.amount ? `₹${formData.amount}` : "₹0"} to{" "}
               {formData.payeeName || "beneficiary"} is being processed securely.
             </p>

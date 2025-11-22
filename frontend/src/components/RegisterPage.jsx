@@ -56,25 +56,26 @@ export default function RegisterPage({ onNavigate }) {
     }`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50 p-6 flex items-center justify-center">
-      <div className="w-full max-w-4xl bg-white rounded-3xl shadow-2xl border-4 border-teal-100 p-10 relative">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50 p-4 sm:p-6 flex items-center justify-center">
+      <div className="w-full max-w-4xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border-2 sm:border-4 border-teal-100 p-6 sm:p-8 lg:p-10 relative">
         <button
           onClick={() => onNavigate("login")}
-          className="absolute top-6 left-6 flex items-center gap-2 text-teal-600 font-semibold"
+          className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-2 text-teal-600 font-semibold text-sm sm:text-base"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Login
+          <span className="hidden sm:inline">Back to Login</span>
+          <span className="sm:hidden">Back</span>
         </button>
 
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-3 bg-teal-50 px-6 py-3 rounded-2xl border border-teal-200">
-            <Shield className="w-6 h-6 text-emerald-600" />
-            <p className="text-sm font-semibold text-teal-700">
+        <div className="text-center mb-6 sm:mb-10 pt-8 sm:pt-0">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-teal-50 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl border border-teal-200">
+            <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
+            <p className="text-xs sm:text-sm font-semibold text-teal-700">
               Create a secure Bank of India account
             </p>
           </div>
-          <h1 className="text-4xl font-bold text-gray-800 mt-6">New User Registration</h1>
-          <p className="text-gray-500 mt-2">Complete the form below to set up your digital banking profile.</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mt-4 sm:mt-6">New User Registration</h1>
+          <p className="text-sm sm:text-base text-gray-500 mt-2">Complete the form below to set up your digital banking profile.</p>
         </div>
 
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
