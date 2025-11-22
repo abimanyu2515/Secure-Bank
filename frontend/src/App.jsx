@@ -8,20 +8,14 @@ import TransferMoneyPage from "./components/TransferMoneyPage";
 import ManageCardsPage from "./components/ManageCardsPage";
 import StatementsPage from "./components/StatementsPage";
 import AccountSettingsPage from "./components/AccountSettingsPage";
-<<<<<<< HEAD
 import VoiceAssistant from "./components/common/VoiceAssistant";
 import Sidebar from "./components/common/Sidebar";
 import FloatingVoiceButton from "./components/common/FloatingVoiceButton";
-=======
->>>>>>> 97348cfe1523b89073d7332583f004ea19bb355e
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("login");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-<<<<<<< HEAD
   const [showVoiceAssistant, setShowVoiceAssistant] = useState(false);
-=======
->>>>>>> 97348cfe1523b89073d7332583f004ea19bb355e
 
   const protectedPages = new Set([
     "home",
@@ -51,7 +45,6 @@ export default function App() {
     setCurrentPage("login");
   };
 
-<<<<<<< HEAD
   const handleToggleVoiceAssistant = () => {
     setShowVoiceAssistant((prev) => !prev);
   };
@@ -98,33 +91,10 @@ export default function App() {
       {showSidebar && (
         <Sidebar
           active={currentPage}
-=======
-  return (
-    <>
-      {currentPage === "login" && <LoginPage onNavigate={handleNavigate} />}
-      {currentPage === "register" && (
-        <RegisterPage onNavigate={handleNavigate} />
-      )}
-      {currentPage === "verify" && (
-        <VerifyIdentityPage
-          onNavigate={handleNavigate}
-          onVerified={handleVerified}
-        />
-      )}
-      {currentPage === "home" && (
-        <HomePage onNavigate={handleNavigate} onLogout={handleLogout} />
-      )}
-      {currentPage === "help" && (
-        <HelpPage onNavigate={handleNavigate} onLogout={handleLogout} />
-      )}
-      {currentPage === "transfer" && (
-        <TransferMoneyPage
->>>>>>> 97348cfe1523b89073d7332583f004ea19bb355e
           onNavigate={handleNavigate}
           onLogout={handleLogout}
         />
       )}
-<<<<<<< HEAD
       <div className="flex-1 overflow-y-auto">{renderPage()}</div>
       {isAuthenticated && (
         <FloatingVoiceButton onClick={handleToggleVoiceAssistant} />
@@ -134,27 +104,6 @@ export default function App() {
         onClose={() => setShowVoiceAssistant(false)}
       />
     </div>
-=======
-      {currentPage === "cards" && (
-        <ManageCardsPage
-          onNavigate={handleNavigate}
-          onLogout={handleLogout}
-        />
-      )}
-      {currentPage === "statements" && (
-        <StatementsPage
-          onNavigate={handleNavigate}
-          onLogout={handleLogout}
-        />
-      )}
-      {currentPage === "settings" && (
-        <AccountSettingsPage
-          onNavigate={handleNavigate}
-          onLogout={handleLogout}
-        />
-      )}
-    </>
->>>>>>> 97348cfe1523b89073d7332583f004ea19bb355e
   );
 }
 
